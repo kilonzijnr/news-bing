@@ -1,0 +1,66 @@
+<div class="container" style="background: #B2FEFA;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #0ED2F7, #B2FEFA);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #0ED2F7, #B2FEFA); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+;">
+{% extends 'base.html'%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block styles %}
+    {{ super() }}
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+    {% endblock %}
+</head>
+<div class="col-md-3">
+  <body>
+  {% block content%}
+  <div>
+    <h3 class="card-header" style="font-family:serif; font-size: 30px; text-align: center; color: black; font-weight: 700;">TOP OF THE TOP</h3>
+    <hr>
+    <div class="card">
+
+       {% for article_row in articles | batch(4)%}
+  
+    <div class="card-header">
+  
+      {% for article in article_row %}
+  
+      <div class="card-body">
+        <div class="col-md-4" >
+          
+           <a href="{{article.url}}" target="_blank">
+            <img src="{{article.image}}" alt="{{article.title}}" class="img-responsive" styles="height:30px">
+          </a>
+          <div style="color: rgb(0, 0, 0);background-color: rgb(255, 187, 0);" >
+            <h4><a href="{{article.url}}" target="_blank" style="color: white; font-family: 'Times New Roman', Times, serif; text-transform: uppercase;">{{article.title |truncate(45)}}</a></h4>
+            <p>{{article.description | truncate(80)}}</p>
+            <a href="{{article.url}}" target="_blank" style="color: rgb(252, 252, 252);"> Read More</a>
+            <br>
+            PUBLISHING DATE: {{article.date}}
+          </div>
+  <br><br>
+          <div class="card-footer" >
+           
+          </div>
+  
+        </div>
+  
+      </div>
+  
+      {% endfor %}
+  
+    </div>
+  
+    {% endfor %}
+  
+  </div>  
+  {% endblock%}
+    </div>
+   
+
+</body>  
+</div>
+
+
+</div>
