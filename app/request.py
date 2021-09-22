@@ -2,7 +2,6 @@ import urllib.request,json
 from .models import Source,Articles
 
 
-
 # Getting api key
 
 api_key = '207ed3b1762c42fc8185f12f71c4da70'
