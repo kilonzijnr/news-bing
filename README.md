@@ -7,7 +7,7 @@ VICTOR KILONZI
 A flask application that provides different news articles from differnt news sources in just one single site.
 
 # Live-Link
- news-bing.herokuapp.com/
+ https://news-bing.herokuapp.com/
  #
 # Installation Setup
 . Open your Terminal
